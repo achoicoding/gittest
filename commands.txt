@@ -1,0 +1,96 @@
+AMacPro:Dojo ACPro$ cd gittest
+AMacPro:gittest ACPro$ ls
+AMacPro:gittest ACPro$ git init
+Initialized empty Git repository in /Users/ACPro/Dropbox/Dojo/gittest/.git/
+AMacPro:gittest ACPro$ touch index.html
+AMacPro:gittest ACPro$ touch styles.css
+AMacPro:gittest ACPro$ touch aboutMe.txt
+AMacPro:gittest ACPro$ git add .
+AMacPro:gittest ACPro$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   aboutMe.txt
+	new file:   index.html
+	new file:   styles.css
+
+AMacPro:gittest ACPro$ git commit -m "First commit. Added: index.html, styles.css, aboutMe.txt"
+[master (root-commit) b34ea69] First commit. Added: index.html, styles.css, aboutMe.txt
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 aboutMe.txt
+ create mode 100644 index.html
+ create mode 100644 styles.css
+AMacPro:gittest ACPro$ joe aboutMe.txt
+-bash: joe: command not found
+AMacPro:gittest ACPro$ pico aboutMe.txt
+AMacPro:gittest ACPro$ status
+-bash: status: command not found
+AMacPro:gittest ACPro$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   aboutMe.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+AMacPro:gittest ACPro$ git add aboutMe.txt
+AMacPro:gittest ACPro$ git commit -m "Added sentence to aboutMe.txt"
+[master 5f9df20] Added sentence to aboutMe.txt
+ 1 file changed, 1 insertion(+)
+AMacPro:gittest ACPro$ pico aboutMe.txt
+AMacPro:gittest ACPro$ git add aboutMe.txt
+AMacPro:gittest ACPro$ git commit -m "Added favoite movie to aboutMe.txt"
+[master 6144913] Added favoite movie to aboutMe.txt
+ 1 file changed, 1 insertion(+)
+AMacPro:gittest ACPro$ git log
+commit 614491380938ac37417da033c68f3671a5a1f623
+Author: achoi <achoi911@gmail.com>
+Date:   Sun Jan 7 10:45:50 2018 -0600
+
+    Added favoite movie to aboutMe.txt
+
+commit 5f9df20f93c9cbc6f17c68efbd8cd418f0eefb67
+Author: achoi <achoi911@gmail.com>
+Date:   Sun Jan 7 10:44:32 2018 -0600
+
+    Added sentence to aboutMe.txt
+
+commit b34ea69b1918669577441081f061f95aa3c6cdd5
+Author: achoi <achoi911@gmail.com>
+Date:   Sun Jan 7 10:42:28 2018 -0600
+
+    First commit. Added: index.html, styles.css, aboutMe.txt
+
+AMacPro:gittest ACPro$ git revert -n 614491380938ac37417da033c68f3671a5a1f623
+AMacPro:gittest ACPro$ git log
+commit 614491380938ac37417da033c68f3671a5a1f623
+Author: achoi <achoi911@gmail.com>
+Date:   Sun Jan 7 10:45:50 2018 -0600
+
+    Added favoite movie to aboutMe.txt
+
+commit 5f9df20f93c9cbc6f17c68efbd8cd418f0eefb67
+Author: achoi <achoi911@gmail.com>
+Date:   Sun Jan 7 10:44:32 2018 -0600
+
+    Added sentence to aboutMe.txt
+
+commit b34ea69b1918669577441081f061f95aa3c6cdd5
+Author: achoi <achoi911@gmail.com>
+Date:   Sun Jan 7 10:42:28 2018 -0600
+
+    First commit. Added: index.html, styles.css, aboutMe.txt
+AMacPro:gittest ACPro$ more aboutMe.txt
+My name is Arnold Choi.
+AMacPro:gittest ACPro$ pico aboutMe.txt
+AMacPro:gittest ACPro$ git add aboutMe.txt
+AMacPro:gittest ACPro$ git commit -m "Added favorite book to aboutMe.txt"
+[master 0756938] Added favorite book to aboutMe.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+AMacPro:gittest ACPro$ touch commands.txt
+AMacPro:gittest ACPro$ pico commands.txt
